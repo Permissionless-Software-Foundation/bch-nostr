@@ -7,6 +7,8 @@ This is an node.js npm library for interactions between BCH and Nostr. Here are 
 - Check a BCH address to see it is has received E2EE messages.
 - Download and decrypt messages stored on Nostr.
 
+# Pedigree
+This repository was originally forked from the [npm-lib-boilerplate-esm](https://github.com/christroutner/npm-lib-boilerplate-esm) boilerplate.
 
 # Licence
 [MIT](LICENSE.md)
