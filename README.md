@@ -35,6 +35,23 @@ console.log(nostrPubKey)
 // '8f97b3b776631f7504c000cff2740e3ba08f928522d45c57ce95d6a3bcbeec6e'
 ```
 
+### Post a message to a Nostr Relay
+
+```javascript
+// Generate a key pair
+const wif = 'L2HJYqrXgsVghD5fXQZY2X4upFuvvnmF9o3cF3s3AuDix3FzbcB1'
+const {privKeyBuf, nostrPubKey} = bchNostr.keys.createNostrPubKeyFromWif({wif})
+
+const relayWs = 'wss://nostr-relay.psfoundation.info'
+
+const msg = "test message"
+
+const inObj = {privKeyBuf, nostrPubKey, relayWs, msg}
+const eventId = await bchNostr.post.uploadToNostr(inObj)
+
+// eventId: '770efaf6c8d0b239a7f3a49e74e55f7fa40d7b9d6ec7760db52f3ade3f3d72b9'
+```
+
 ## Dev Environment
 
 Follow these instruction to setup a dev environment. Ensure node.js v20+ is installed.
