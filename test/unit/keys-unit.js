@@ -3,17 +3,14 @@
 */
 
 // npm libraries
-import chai from 'chai'
+import { assert } from 'chai'
 import sinon from 'sinon'
 
 // Unit under test
 import Keys from '../../lib/keys.js'
-
-// Locally global variables.
-const assert = chai.assert
 const uut = new Keys()
 
-describe('#util.js', () => {
+describe('#keys.js', () => {
   let sandbox
 
   beforeEach(() => {
@@ -34,10 +31,10 @@ describe('#util.js', () => {
       }
     })
 
-    it('should generate a Nostr pubkey from a WIF private key', async () => {
+    it('should generate a Nostr pubkey from a WIF private key', () => {
       const wif = 'L2HJYqrXgsVghD5fXQZY2X4upFuvvnmF9o3cF3s3AuDix3FzbcB1'
 
-      const result = await uut.createNostrPubKeyFromWif({ wif })
+      const result = uut.createNostrPubKeyFromWif({ wif })
       // console.log('result: ', result)
 
       assert.equal(result.nostrPubKey, '8f97b3b776631f7504c000cff2740e3ba08f928522d45c57ce95d6a3bcbeec6e')

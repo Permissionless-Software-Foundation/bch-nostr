@@ -8,16 +8,17 @@
 import BCHJS from '@psf/bch-js'
 
 import Util from './lib/util.js'
-const util = new Util()
 
 import Keys from './lib/keys.js'
+import Post from './lib/post.js'
+const util = new Util()
 
 class BchNostr {
   constructor () {
-
     this.bchjs = new BCHJS()
     this.util = util
     this.keys = new Keys()
+    this.post = new Post()
   }
 }
 
