@@ -1,7 +1,7 @@
 {
-  "name": "@chris.troutner/npm-lib-boilerplate-esm",
-  "version": "1.0.0",
-  "description": "A boilerplate for creating an npm library with Semantic Release, linting, and tests.",
+  "name": "bch-nostr",
+  "version": "1.0.2",
+  "description": "Utility library for interaction between BCH and Nostr.",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -29,10 +29,10 @@
   "author": "Chris Troutner <chris.troutner@gmail.com>",
   "license": "MIT",
   "apidoc": {
-    "title": "npm-lib-boilerplate-esm",
+    "title": "bch-nostr",
     "url": "localhost:5000"
   },
-  "repository": "christroutner/npm-lib-boilerplate-esm",
+  "repository": "Permissionless-Software-Foundation/bch-nostr",
   "dependencies": {
     "@psf/bch-js": "6.4.5",
     "apidoc": "0.53.0"
