@@ -35,7 +35,9 @@
   "repository": "Permissionless-Software-Foundation/bch-nostr",
   "dependencies": {
     "@psf/bch-js": "6.4.5",
-    "apidoc": "0.53.0"
+    "apidoc": "0.53.0",
+    "base58-js": "2.0.0",
+    "nostr-tools": "2.10.1"
   },
   "devDependencies": {
     "c8": "7.12.0",

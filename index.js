@@ -10,15 +10,15 @@ import BCHJS from '@psf/bch-js'
 import Util from './lib/util.js'
 const util = new Util()
 
-let _this // local global for 'this'.
+import Keys from './lib/keys.js'
 
-class BoilerplateLib {
+class BchNostr {
   constructor () {
-    _this = this
 
-    _this.bchjs = new BCHJS()
-    _this.util = util
+    this.bchjs = new BCHJS()
+    this.util = util
+    this.keys = new Keys()
   }
 }
 
-export default BoilerplateLib
+export default BchNostr
