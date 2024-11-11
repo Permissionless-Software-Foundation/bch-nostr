@@ -28,7 +28,7 @@ The WIF format is the standard format for private keys in BTC and BCH. You can u
 
 ```javascript
 const wif = 'L2HJYqrXgsVghD5fXQZY2X4upFuvvnmF9o3cF3s3AuDix3FzbcB1'
-const {privKeyBuf, nostrPubKey} = createNostrPubKeyFromWif({wif})
+const {privKeyBuf, nostrPubKey} = bchNostr.keys.createNostrPubKeyFromWif({wif})
 
 // privKeyBuf is the raw private key as a 32-byte Uint8Array
 console.log(nostrPubKey)
