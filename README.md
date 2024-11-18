@@ -35,7 +35,7 @@ console.log(nostrPubKey)
 // '8f97b3b776631f7504c000cff2740e3ba08f928522d45c57ce95d6a3bcbeec6e'
 ```
 
-### Post a message to a Nostr Relay
+### Post a Message to a Nostr Relay
 
 ```javascript
 // Generate a key pair
@@ -50,6 +50,32 @@ const inObj = {privKeyBuf, nostrPubKey, relayWs, msg}
 const eventId = await bchNostr.post.uploadToNostr(inObj)
 
 // eventId: '770efaf6c8d0b239a7f3a49e74e55f7fa40d7b9d6ec7760db52f3ade3f3d72b9'
+```
+
+### Publish a Message Signal to the BCH Blockchain
+
+```javascript
+
+const eventId = '770efaf6c8d0b239a7f3a49e74e55f7fa40d7b9d6ec7760db52f3ade3f3d72b9'
+const receiver = 'bitcoincash:qzwu79a6dp88sxwq8wy80ak694v9gqshaun2xrj5ut'
+
+// Generate a wallet
+const wif = 'L2HJYqrXgsVghD5fXQZY2X4upFuvvnmF9o3cF3s3AuDix3FzbcB1'
+const wallet = new BchWallet(wif, {
+  interface: 'consumer-api',
+  restURL: 'https://free-bch.fullstack.cash'
+})
+await wallet.initialize()
+
+const inObj = {
+  wallet,
+  addr: receiver,
+  subject: 'test',
+  eventId
+}
+
+const result = await bchNostr.signal.sendMsgSignal(inObj)
+
 ```
 
 ## Dev Environment
