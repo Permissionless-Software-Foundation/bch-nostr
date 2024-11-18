@@ -6,12 +6,13 @@
   "type": "module",
   "scripts": {
     "start": "node index.js",
-    "test": "npm run lint && TEST=unit c8 mocha test/unit/",
+    "test": "npm run lint && TEST=unit c8 mocha --timeout 10000 test/unit/",
     "test:integration": "mocha --timeout 25000 test/integration/",
+    "test:e2e": "mocha --timeout 60000 test/e2e/",
     "lint": "standard --env mocha --fix",
     "docs": "./node_modules/.bin/apidoc -i src/ -o docs",
     "coverage": "c8 report --reporter=text-lcov | coveralls",
-    "coverage:report": "c8 --reporter=html mocha test/unit/ --exit"
+    "coverage:report": "c8 --reporter=html mocha --timeout 10000 test/unit/ --exit"
   },
   "keywords": [
     "bitcoin",
@@ -34,9 +35,10 @@
   },
   "repository": "Permissionless-Software-Foundation/bch-nostr",
   "dependencies": {
-    "@psf/bch-js": "6.4.5",
+    "@chris.troutner/retry-queue": "1.0.10",
     "apidoc": "0.53.0",
     "base58-js": "2.0.0",
+    "bch-message-lib": "2.3.1",
     "nostr-tools": "2.10.1",
     "ws": "8.18.0"
   },
@@ -46,6 +48,7 @@
     "coveralls": "3.1.1",
     "husky": "8.0.1",
     "lodash.clonedeep": "4.5.0",
+    "minimal-slp-wallet": "5.12.1",
     "mocha": "10.0.0",
     "semantic-release": "19.0.5",
     "sinon": "14.0.0",
