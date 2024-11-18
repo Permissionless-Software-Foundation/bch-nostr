@@ -54,6 +54,8 @@ const eventId = await bchNostr.post.uploadToNostr(inObj)
 
 ### Publish a Message Signal to the BCH Blockchain
 
+Publish a [PS001 message signal](https://github.com/Permissionless-Software-Foundation/specifications/blob/master/ps001-media-sharing.md) to a BCH address to let it know that an E2EE message has been sent.
+
 ```javascript
 
 const eventId = '770efaf6c8d0b239a7f3a49e74e55f7fa40d7b9d6ec7760db52f3ade3f3d72b9'
