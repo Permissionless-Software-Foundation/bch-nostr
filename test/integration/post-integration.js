@@ -7,7 +7,6 @@ import { assert } from 'chai'
 
 // Unit under test
 import BchNostr from '../../index.js'
-
 const bchNostr = new BchNostr()
 
 describe('#post.js', () => {
