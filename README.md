@@ -80,6 +80,60 @@ const result = await bchNostr.signal.sendMsgSignal(inObj)
 
 ```
 
+### Check the BCH Blockchain for Message Signals Sent to an Address
+
+Check if your address has received messages. The `limit` property can be used
+to limit the number of results. By default, it is set to 10. Setting it to 0
+will return all messages found.
+
+```javascript
+
+// Generate a wallet
+const wif = 'L2HJYqrXgsVghD5fXQZY2X4upFuvvnmF9o3cF3s3AuDix3FzbcB1'
+const wallet = new BchWallet(wif, {
+  interface: 'consumer-api',
+  restURL: 'https://free-bch.fullstack.cash'
+})
+await wallet.initialize()
+
+const addr = wallet.walletInfo.address
+
+const inObj = {
+  wallet,
+  addr,
+  limit: 3
+}
+
+const result = await bchNostr.signal.checkMsgs(inObj)
+console.log(result)
+
+// result:
+// [
+//   {
+//     hash: '2f4c17fd14c27314923f282abe280ad2938448150ff9b13c044ae95045a9716c',
+//     subject: '111824a',
+//     sender: 'bitcoincash:qr2zqrnqdulfmeqs2qe9c5p605lrwe90v5v735s2jl',
+//     txid: '026d13c9b1920b72ea239a489408bf81ed7ceff47fb4ec3c383d56ab07bfefb7',
+//     time: 1731967518
+//   },
+//   {
+//     hash: '53531b0424b64c7844de2aef2cf8ffebee9802086f968d44ddf07adac08ad73b',
+//     subject: 'test 10/30/24;7:21PM',
+//     sender: 'bitcoincash:qr2zqrnqdulfmeqs2qe9c5p605lrwe90v5v735s2jl',
+//     txid: 'e7537fbeebb367e09793286f636ec6a4a0b04ba556ec90691b5e0107d18cc5cb',
+//     time: 1730344313
+//   },
+//   {
+//     hash: 'f59991db8d4086a6d7a6d08ddacbdde9c0b136ce4de4e0debb7942d148f7efc5',
+//     subject: 'subject 432',
+//     sender: 'bitcoincash:qr2zqrnqdulfmeqs2qe9c5p605lrwe90v5v735s2jl',
+//     txid: '84fb0b2c739abc06657e7b7790d88f713420c97c8e3f8a3c374521242b2d070b',
+//     time: 1729656368
+//   }
+// ]
+
+```
+
 ## Dev Environment
 
 Follow these instruction to setup a dev environment. Ensure node.js v20+ is installed.
