@@ -82,7 +82,9 @@ const result = await bchNostr.signal.sendMsgSignal(inObj)
 
 ### Check the BCH Blockchain for Message Signals Sent to an Address
 
-Check if your address has recieved messages.
+Check if your address has received messages. The `limit` property can be used
+to limit the number of results. By default, it is set to 10. Setting it to 0
+will return all messages found.
 
 ```javascript
 
