@@ -134,6 +134,29 @@ console.log(result)
 
 ```
 
+### Retrieve a Message from a Nostr Relay
+
+```javascript
+
+const wallet = new BchWallet(undefined, {
+  interface: 'consumer-api',
+  restURL: 'https://free-bch.fullstack.cash'
+})
+await wallet.walletInfoPromise
+
+const txid = '026d13c9b1920b72ea239a489408bf81ed7ceff47fb4ec3c383d56ab07bfefb7'
+
+const inObj = {
+  txid,
+  wallet
+}
+
+const { message } = await bchNostr.read.getNostrMsgFromTxid(inObj)
+console.log('message: ', message)
+
+// message: 'This is clear text, but it could be an encrypted message.'
+```
+
 ## Dev Environment
 
 Follow these instruction to setup a dev environment. Ensure node.js v20+ is installed.
