@@ -39,6 +39,7 @@
     "apidoc": "0.53.0",
     "base58-js": "2.0.0",
     "bch-message-lib": "2.3.1",
+    "nostr": "0.2.8",
     "nostr-tools": "2.10.1",
     "ws": "8.18.0"
   },
