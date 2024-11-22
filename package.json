@@ -35,7 +35,6 @@
   },
   "repository": "Permissionless-Software-Foundation/bch-nostr",
   "dependencies": {
-    "@chris.troutner/retry-queue": "1.0.10",
     "apidoc": "0.53.0",
     "base58-js": "2.0.0",
     "bch-message-lib": "2.3.1",
